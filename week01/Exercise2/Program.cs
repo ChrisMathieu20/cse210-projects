@@ -35,13 +35,34 @@ class Program
 
         int lastDigits = (gradePerc % 10);
 
-        if (lastDigits>=7 && letter != "A" || lastDigits>=7 && letter != "F")
+        if (lastDigits>=7)
         {
-            digits = "+";
+            if (letter=="A")
+            {
+                if (letter=="F")
+                {
+                    digits = "";
+                }
+            }
+            else
+            {
+                digits = "+";
+            }
         }
-        else if (lastDigits<3 && letter != "F")
+        else if (lastDigits<3)
         {
-            digits = "-";
+            if (letter=="F")
+            {
+                digits = "";
+            }
+            else
+            {
+                digits = "-";
+            }
+        }
+        else
+        {
+            digits = "";
         }
 
         Console.WriteLine($"Your Grade: {letter}{digits}");
