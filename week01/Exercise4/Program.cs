@@ -11,7 +11,7 @@ class Program
 
         while (series != 0)
         {
-            if (series > 0)
+            if (series > 0 || series < 0)
             {
                 Console.Write("Enter a series of number: ");
                 string seriesNumber = Console.ReadLine();
@@ -29,5 +29,20 @@ class Program
             sum = sum + add;
         }
         Console.WriteLine($"The sum is: {sum}");
+
+        int length = lists.Count;
+        float total = sum;
+        float average = total / (length-1);
+        Console.WriteLine($"The average is: {average}");
+
+        int max = lists[0];
+        foreach (int row in lists)
+        {
+            if (row > max)
+            {
+                max = row;
+            }
+        }
+        Console.WriteLine($"The largest number is: {max}");
     }
 }
